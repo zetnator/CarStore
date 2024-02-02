@@ -15,5 +15,10 @@ namespace BookStore_BL.Services
         {
             throw new NotImplementedException();
         }
+
+        public string GetStoreName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
