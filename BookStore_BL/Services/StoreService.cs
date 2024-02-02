@@ -2,7 +2,7 @@
 
 namespace BookStore_BL.Services
 {
-    internal class ILibraryService : ILibraryRepository
+    internal class ILibraryService : IStoreRepository
     {
         private readonly ILibraryService _libraryService;
 

@@ -5,16 +5,16 @@ using CarStore_BL.Interfaces;
 
 namespace BookStore_BL.Services
 {
-    public class BookService : IBookService
+    public class BookService : ICarService
     {
-        private readonly IBookRepository _bookRepository;
+        private readonly ICarRepository _bookRepository;
 
-        public BookService(IBookRepository bookRepository)
+        public BookService(ICarRepository bookRepository)
         {
             _bookRepository = bookRepository;
         }
 
-        public void Add(Book book)
+        public void Add(Car book)
         {
             _bookRepository.Add(book);
         }
@@ -24,17 +24,17 @@ namespace BookStore_BL.Services
             _bookRepository.Delete(id);
         }
 
-        public List<Book> GetAll()
+        public List<Car> GetAll()
         {
             return _bookRepository.GetAll();
         }
 
-        public Book? GetBooksById(int id)
+        public Car? GetBooksById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Book? GetById(int id)
+        public Car? GetById(int id)
         {
             return _bookRepository.GetById(id);
         }

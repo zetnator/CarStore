@@ -7,13 +7,13 @@ using CarStore_Models.Models;
 
 namespace CarStore_DL.Interfaces
 {
-    public interface IAuthorRepository
+    public interface IBuyerRepository
     {
-        List<Author> GetAll();
+        List<Buyer> GetAll();
 
-        Author? GetById(int id);
+        Buyer? GetById(int id);
 
-        void Add(Author author);
+        void Add(Buyer buyer);
 
         void Delete(int id);
     }

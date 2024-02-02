@@ -5,13 +5,17 @@ using System.Threading.Tasks;
 
 namespace CarStore_Models.Models;
 
-public record Book
+public record Car
 {
     public int Id { get; set; }
 
-    public string Title { get; set; } = string.Empty;
+    public string Brand { get; set; }
 
-    public int AuthorId { get; set; }
+    public string Model { get; set; }
 
     public DateTime ReleaseDate { get; set; }
+
+    public int BuyerId { get; set; }
+
+    
 }

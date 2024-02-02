@@ -4,31 +4,31 @@ using CarStore_Models.Models;
 
 namespace CarStore_DL.Repositories
 {
-    public class AuthorRepository : IAuthorRepository
+    public class AuthorRepository : IBuyerRepository
     {
-        public void Add(Author author)
+        public void Add(Buyer buyer)
         {
-            InMemoryDB.AuthorData.Add(author);
+            InMemoryDB.BuyerData.Add(buyer);
         }
 
         public void Delete(int id)
         {
-            var author = GetById(id);
-            if (author != null)
+            var buyer = GetById(id);
+            if (buyer != null)
             {
-                InMemoryDB.AuthorData.Remove(author);
+                InMemoryDB.BuyerData.Remove(buyer);
             }
             
         }
 
-        public List<Author> GetAll()
+        public List<Buyer> GetAll()
         {
-            return InMemoryDB.AuthorData;
+            return InMemoryDB.BuyerData;
         }
 
-        public Author? GetById(int id)
+        public Buyer? GetById(int id)
         {
-            return InMemoryDB.AuthorData.FirstOrDefault(a => a.Id == id);
+            return InMemoryDB.BuyerData.FirstOrDefault(a => a.Id == id);
         }
     }
 }

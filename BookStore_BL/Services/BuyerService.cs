@@ -4,16 +4,16 @@ using CarStore_BL.Interfaces;
 
 namespace CarStore_BL.Services
 {
-    public class AuthorService : IAuthorService
+    public class BuyerService : IBuyerService
     {
-        private readonly IAuthorRepository _authorRepository;
+        private readonly IBuyerRepository _authorRepository;
 
-        public AuthorService(IAuthorRepository authorRepository)
+        public BuyerService(IBuyerRepository authorRepository)
         {
             _authorRepository = authorRepository;
         }
 
-        public void Add(Author author)
+        public void Add(Buyer author)
         {
             _authorRepository.Add(author);
         }
@@ -23,12 +23,12 @@ namespace CarStore_BL.Services
             _authorRepository.Delete(id);
         }
 
-        public List<Author> GetAll()
+        public List<Buyer> GetAll()
         {
             return _authorRepository.GetAll();  
         }
 
-        public Author? GetById(int id)
+        public Buyer? GetById(int id)
         {
             return _authorRepository.GetById(id);
         }

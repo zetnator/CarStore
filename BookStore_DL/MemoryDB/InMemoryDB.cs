@@ -9,50 +9,95 @@ namespace CarStore_DL.MemoryDB
 {
     public static class InMemoryDB
     {
-        public static List<Author> AuthorData = new List<Author>()
+        public static List<Buyer> BuyerData = new List<Buyer>()
         {
-            new Author()
+            new Buyer()
             {
                 Id = 1,
-                Name = "Author 1",
+                Name = "Buyer 1",
                 BirthDay = DateTime.Now
             },
-              new Author()
+              new Buyer()
             {
                 Id = 2,
-                Name = "Author 2",
+                Name = "Buyer 2",
                 BirthDay = DateTime.Now
             },
-                new Author()
+                new Buyer()
             {
                 Id = 3,
-                Name = "Author 3",
+                Name = "Buyer 3",
+                BirthDay = DateTime.Now
+            },
+                new Buyer()
+            {
+                Id = 4,
+                Name = "Buyer 4",
+                BirthDay = DateTime.Now
+            },
+                new Buyer()
+            {
+                Id = 5,
+                Name = "Buyer 5",
+                BirthDay = DateTime.Now
+            },
+                new Buyer()
+            {
+                Id = 6,
+                Name = "Buyer 6",
                 BirthDay = DateTime.Now
             }
         };
 
-        public static List<Book> BookData = new List<Book>()
+        public static List<Car> CarData = new List<Car>()
         {
-            new Book()
+            new Car()
             {
                 Id = 1,
-                Title = "Book 1",
+                Brand = "Renault",
+                Model = "",
                 ReleaseDate = new DateTime(2005,02, 12),
-                AuthorId = 1,
+                BuyerId = 1,
             },
-            new Book()
+            new Car()
             {
                 Id = 2,
-                Title = "Book 2",
+                Brand = "Volkswager",
+                Model = "",
                 ReleaseDate = new DateTime(2007,02, 12),
-                AuthorId = 2,
+                BuyerId = 2,
             },
-            new Book()
+            new Car()
             {
                 Id = 3,
-                Title = "Book 3",
+                Brand = "Mercedes",
+                Model = "",
                 ReleaseDate = DateTime.Now,
-                AuthorId = 3,
+                BuyerId = 3,
+            },
+            new Car()
+            {
+                Id = 4,
+                Brand = "BMW",
+                Model = "",
+                ReleaseDate = DateTime.Now,
+                BuyerId = 3,
+            },
+            new Car()
+            {
+                Id = 5,
+                Brand = "Audi",
+                Model = "",
+                ReleaseDate = DateTime.Now,
+                BuyerId = 3,
+            },
+            new Car()
+            {
+                Id = 6,
+                Brand = "Nissan",
+                Model = "",
+                ReleaseDate = DateTime.Now,
+                BuyerId = 3,
             }
         };
     }

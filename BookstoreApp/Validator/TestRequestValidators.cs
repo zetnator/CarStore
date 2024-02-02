@@ -2,7 +2,7 @@
 
 namespace BookstoreApp.Validators
 {
-    public class TestRequestValidation : AbstractValidator<GetAllBookByAuthorRequest>
+    public class TestRequestValidation : AbstractValidator<GetAllCarsByBuyerRequest>
     {
 
         public TestRequestValidation()

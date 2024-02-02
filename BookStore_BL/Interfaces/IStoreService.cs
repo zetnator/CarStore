@@ -3,7 +3,7 @@ using CarStore_Models.Requests;
 
 namespace BookStore_BL.Interfaces
 {
-    public interface ILibraryService
+    public interface IStoreService
     {
         GetBooksByAuthorResponse?
             GetBooksByAuthor(GetBooksByAuthorRequest request);

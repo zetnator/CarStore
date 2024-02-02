@@ -1,9 +1,9 @@
 ﻿namespace CarStore_Models.Models
 {
-    public class Author
+    public class Buyer
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; }
         public DateTime BirthDay { get; set; }
     }
 }

@@ -4,9 +4,9 @@ using FluentValidation.AspNetCore;
 
 namespace BookstoreApp.Validator
 {
-    public class GetBooksByAuthorIdValidator
+    public class GetCarByBuyerIdValidator
     {
-        public GetBooksByAuthorIdValidator()
+        public GetCarByBuyerIdValidator()
         {
             
         }

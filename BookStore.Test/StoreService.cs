@@ -2,12 +2,12 @@
 
 namespace BookStore.Test
 {
-    internal class LibraryService
+    internal class StoreService
     {
         private BookService bookService;
         private AuthorService authorService;
 
-        public LibraryService(BookService bookService, AuthorService authorService)
+        public StoreService(BookService bookService, AuthorService authorService)
         {
             this.bookService = bookService;
             this.authorService = authorService;

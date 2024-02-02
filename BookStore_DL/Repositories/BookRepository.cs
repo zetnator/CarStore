@@ -4,11 +4,11 @@ using CarStore_DL.MemoryDB;
 
 namespace CarStore_DL.Repositories
 {
-    public class BookRepository : IBookRepository
+    public class BookRepository : ICarRepository
     {
-        public void Add(Book book)
+        public void Add(Car car)
         {
-            InMemoryDB.BookData.Add(book);
+            InMemoryDB.BuyerData.Add(buyer);
         }
 
         public void Delete(int id)
@@ -16,42 +16,42 @@ namespace CarStore_DL.Repositories
             var book = GetById(id);
             if (book != null)
             {
-                InMemoryDB.BookData.Remove(book);
+                InMemoryDB.CarData.Remove(car);
             }
 
         }
 
-        public List<Book> GetAll()
+        public List<Car> GetAll()
         {
-            return InMemoryDB.BookData;
+            return InMemoryDB.CarData;
         }
 
-        public Book? GetById(int id)
+        public Car? GetById(int id)
         {
-            return InMemoryDB.BookData.FirstOrDefault(a => a.Id == id);
+            return InMemoryDB.CarData.FirstOrDefault(a => a.Id == id);
         }
 
-        void IBookRepository.Add(Book author)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IBookRepository.Delete(int id)
+        void ICarRepository.Add(Car buyer)
         {
             throw new NotImplementedException();
         }
 
-        List<Book> IBookRepository.GetAll()
+        void ICarRepository.Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        List<Book> IBookRepository.GetAllBooksByAuthor(int authorId)
+        List<Car> ICarRepository.GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Car> ICarRepository.GetAllCarsByAuthor(int authorId)
         {
             return InMemoryDB.BookData.Where(b => b.AuthorId == authorId).ToList();
         }
 
-        Book? IBookRepository.GetById(int id)
+        Car? ICarRepository.GetById(int id)
         {
             throw new NotImplementedException();
         }
