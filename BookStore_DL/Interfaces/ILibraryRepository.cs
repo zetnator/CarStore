@@ -1,4 +1,4 @@
-﻿namespace BookStore_DL.Interfaces
+﻿namespace CarStore_DL.Interfaces
 {
     public interface ILibraryRepository
     {

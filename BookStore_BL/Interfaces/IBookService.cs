@@ -1,15 +1,15 @@
-﻿using BookStore_Models.Models;
+﻿using CarStore_Models.Models;
 
-namespace BookStore_BL.Interfaces
+namespace CarStore_BL.Interfaces
 {
     public interface IBookService
     {
-            List<Book> GetAll();
+        List<Book> GetAll();
 
-            Book? GetBooksById(int id);
+        Book? GetBooksById(int id);
 
-            void Add(Book book);
+        void Add(Book book);
 
-            void Delete(int id);
+        void Delete(int id);
     }
 }

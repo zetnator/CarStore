@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore_Models.Models;
+namespace CarStore_Models.Models;
 
 public record Book
 {

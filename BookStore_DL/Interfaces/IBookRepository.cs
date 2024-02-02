@@ -1,6 +1,6 @@
-﻿using BookStore_Models.Models;
+﻿using CarStore_Models.Models;
 
-namespace BookStore_DL.Interfaces
+namespace CarStore_DL.Interfaces
 {
     public interface IBookRepository
     {

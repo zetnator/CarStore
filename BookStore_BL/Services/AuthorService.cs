@@ -1,8 +1,8 @@
-﻿using BookStore_BL.Interfaces;
-using BookStore_DL.Interfaces;
-using BookStore_Models.Models;
+﻿using CarStore_DL.Interfaces;
+using CarStore_Models.Models;
+using CarStore_BL.Interfaces;
 
-namespace BookStore_BL.Services
+namespace CarStore_BL.Services
 {
     public class AuthorService : IAuthorService
     {

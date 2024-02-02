@@ -7,15 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
     <PackageReference Include="FluentValidation" Version="11.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-=======
->>>>>>> zetnator/primer
-    <ProjectReference Include="..\BookStore_DL\BookStore_DL.csproj" />
-    <ProjectReference Include="..\BookStore_Models\BookStore_Models.csproj" />
+    <ProjectReference Include="..\BookStore_DL\CarStore_DL.csproj" />
+    <ProjectReference Include="..\BookStore_Models\CarStore_Models.csproj" />
   </ItemGroup>
 
 </Project>

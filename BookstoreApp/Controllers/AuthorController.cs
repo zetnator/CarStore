@@ -1,5 +1,5 @@
-using BookStore_BL.Interfaces;
-using BookStore_Models.Models;
+using CarStore_Models.Models;
+using CarStore_BL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookstoreApp.Controllers

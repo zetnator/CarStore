@@ -1,5 +1,5 @@
-﻿using BookStore_Models.Responses;
-using BookStore_Models.Requests;
+﻿using CarStore_Models.Responses;
+using CarStore_Models.Requests;
 
 namespace BookStore_BL.Interfaces
 {

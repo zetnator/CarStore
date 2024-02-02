@@ -1,6 +1,6 @@
-﻿using BookStore_Models.Models;
+﻿using CarStore_Models.Models;
 
-namespace BookStore_Models.Responses
+namespace CarStore_Models.Responses
 {
     public class GetBooksByAuthorResponse
     {

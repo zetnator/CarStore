@@ -1,8 +1,8 @@
-﻿using BookStore_DL.Interfaces;
-using BookStore_DL.MemoryDB;
-using BookStore_Models.Models;
+﻿using CarStore_DL.Interfaces;
+using CarStore_DL.MemoryDB;
+using CarStore_Models.Models;
 
-namespace BookStore_DL.Repositories
+namespace CarStore_DL.Repositories
 {
     public class AuthorRepository : IAuthorRepository
     {

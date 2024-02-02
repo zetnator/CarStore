@@ -1,6 +1,6 @@
-﻿using BookStore_Models.Models;
-using BookStore_BL.Interfaces;
-using BookStore_DL.Interfaces;
+﻿using CarStore_Models.Models;
+using CarStore_DL.Interfaces;
+using CarStore_BL.Interfaces;
 
 
 namespace BookStore_BL.Services

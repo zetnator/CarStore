@@ -1,4 +1,4 @@
-﻿namespace BookStore_Models.Models
+﻿namespace CarStore_Models.Models
 {
     public class Author
     {

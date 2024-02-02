@@ -1,4 +1,4 @@
-﻿namespace BookStore_Models.Requests
+﻿namespace CarStore_Models.Requests
 {
     public class GetBooksByAuthorRequest
     {

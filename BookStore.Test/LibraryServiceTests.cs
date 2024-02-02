@@ -1,6 +1,6 @@
 using BookStore_BL.Services;
-using BookStore_DL.Interfaces;
-using BookStore_Models.Models;
+using CarStore_DL.Interfaces;
+using CarStore_Models.Models;
 using Moq;
 
 namespace BookStore.Test

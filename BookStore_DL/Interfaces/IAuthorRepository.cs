@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BookStore_Models.Models;
+using CarStore_Models.Models;
 
-namespace BookStore_DL.Interfaces
+namespace CarStore_DL.Interfaces
 {
     public interface IAuthorRepository
     {
