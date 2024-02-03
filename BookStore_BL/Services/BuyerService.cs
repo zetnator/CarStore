@@ -6,31 +6,31 @@ namespace CarStore_BL.Services
 {
     public class BuyerService : IBuyerService
     {
-        private readonly IBuyerRepository _authorRepository;
+        private readonly IBuyerRepository _buyerRepository;
 
-        public BuyerService(IBuyerRepository authorRepository)
+        public BuyerService(IBuyerRepository buyerRepository)
         {
-            _authorRepository = authorRepository;
+            _buyerRepository = buyerRepository;
         }
 
-        public void Add(Buyer author)
+        public void Add(Buyer buyer)
         {
-            _authorRepository.Add(author);
+            _buyerRepository.Add(buyer);
         }
 
         public void Delete(int id)
         {
-            _authorRepository.Delete(id);
+            _buyerRepository.Delete(id);
         }
 
         public List<Buyer> GetAll()
         {
-            return _authorRepository.GetAll();  
+            return _buyerRepository.GetAll();  
         }
 
         public Buyer? GetById(int id)
         {
-            return _authorRepository.GetById(id);
+            return _buyerRepository.GetById(id);
         }
     }
 }

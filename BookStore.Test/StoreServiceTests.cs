@@ -99,7 +99,7 @@ namespace CarStore_Test
 
             //inject
             var bookService =
-                new BookService(mockedBookRepository.Object);
+                new CarService(mockedBookRepository.Object);
             var authorService =
                 new AuthorService(mockedAuthorRepository.Object);
             var libraryService =
@@ -125,7 +125,7 @@ namespace CarStore_Test
             var mockedAuthorRepository =
                 new Mock<IBuyerRepository>();
 
-            mockedBookRepository.Setup(x => x.GetAllCarsByBuyer(buyerId))
+            mockedBookRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
                                 .Returns(CarData.Where(b =>b.BuyerId == BuyerId).ToList());
 
             //inject

@@ -1,8 +1,8 @@
 ﻿namespace CarStore_Models.Requests
 {
-    public class GetBooksByAuthorRequest
+    public class GetCarsByBuyerIdRequest
     {
-        public int AuthorId { get; set; }
+        public int BuyerId { get; set; }
 
         public DateTime AfterDate { get; set; }
     }

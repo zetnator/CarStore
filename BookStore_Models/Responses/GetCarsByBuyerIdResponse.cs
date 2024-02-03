@@ -2,10 +2,10 @@
 
 namespace CarStore_Models.Responses
 {
-    public class GetBooksByAuthorResponse
+    public class GetCarsByBuyerIdResponse
     {
-        public Buyer Author { get; set; }
+        public Buyer Buyer{ get; set; }
 
-        public List<Car> Book { get; set; }
+        public List<Car> Car { get; set; }
     }
 }

@@ -51,7 +51,7 @@ namespace CarStore_DL.Repositories
             throw new NotImplementedException();
         }
 
-        List<Car> ICarRepository.GetAllCarsByBuyer(int authorId)
+        List<Car> ICarRepository.GetAllCarsByBuyerId(int authorId)
         {
             return InMemoryDB.CarData.Where(b => b.BuyerId == authorId).ToList();
         }

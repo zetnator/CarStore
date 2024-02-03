@@ -1,11 +1,11 @@
 ﻿using CarStore_Models.Responses;
 using CarStore_Models.Requests;
 
-namespace BookStore_BL.Interfaces
+namespace CarStore_BL.Interfaces
 {
     public interface IStoreService
     {
-        GetBooksByAuthorResponse?
-            GetBooksByAuthor(GetBooksByAuthorRequest request);
+        GetCarsByBuyerIdResponse?
+            GetByAuthor(GetCarsByBuyerIdRequest request);
     }
 }

@@ -6,12 +6,13 @@ namespace CarStore_DL.Interfaces
     {
         List<Car> GetAll();
 
-        List<Car> GetAllCarsByBuyer(int buyerId);
+        List<Car> GetAllCarsByBuyerId(int buyerId);
 
         Car? GetCarById(int id);
 
         void Add(Car buyer);
 
         void Delete(int id);
+        Car? GetById(int id);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using CarStore_Models.Responses;
 using CarStore_Models.Requests;
-using BookStore_BL.Interfaces;
+using CarStore_BL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookstoreApp.Controllers

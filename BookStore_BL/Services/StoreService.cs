@@ -1,19 +1,14 @@
 ﻿using CarStore_DL.Interfaces;
 
-namespace BookStore_BL.Services
+namespace CarStore_BL.Services
 {
-    internal class ILibraryService : IStoreRepository
+    internal class IStoreService : IStoreRepository
     {
-        private readonly ILibraryService _libraryService;
+        private readonly IStoreService _storeService;
 
-        public ILibraryService(ILibraryService libraryService)
+        public IStoreService(IStoreService storeService)
         {
-            _libraryService = libraryService;
-        }
-
-        public string GetLibraryName()
-        {
-            throw new NotImplementedException();
+            _storeService = storeService;
         }
 
         public string GetStoreName()

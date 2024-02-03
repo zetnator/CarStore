@@ -3,42 +3,33 @@ using CarStore_DL.Interfaces;
 using CarStore_BL.Interfaces;
 
 
-namespace BookStore_BL.Services
+namespace CarStore_BL.Services
 {
-    public class BookService : ICarService
+    public class CarService : ICarService
     {
-        private readonly ICarRepository _bookRepository;
+        private readonly ICarRepository _carRepository;
 
-        public BookService(ICarRepository bookRepository)
+        public CarService(ICarRepository carRepository)
         {
-            _bookRepository = bookRepository;
+            _carRepository = carRepository;
         }
 
-        public void Add(Car book)
+        public void Add(Car car)
         {
-            _bookRepository.Add(book);
+            _carRepository.Add(car);
         }
 
         public void Delete(int id)
         {
-            _bookRepository.Delete(id);
+            _carRepository.Delete(id);
         }
 
         public List<Car> GetAll()
         {
-            return _bookRepository.GetAll();
+            return _carRepository.GetAll();
         }
+        public Car? GetById(int id) => _carRepository.GetById(id);
 
-        public Car? GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Car? GetById(int id)
-        {
-            return _carRepository.GetById(id);
-        }
-
-       
     }
 }
