@@ -4,7 +4,7 @@ using CarStore_Models.Models;
 
 namespace CarStore_DL.Repositories
 {
-    public class AuthorRepository : IBuyerRepository
+    public class BuyerRepository : IBuyerRepository
     {
         public void Add(Buyer buyer)
         {

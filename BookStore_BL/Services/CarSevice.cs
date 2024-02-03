@@ -29,14 +29,14 @@ namespace BookStore_BL.Services
             return _bookRepository.GetAll();
         }
 
-        public Car? GetBooksById(int id)
+        public Car? GetById(int id)
         {
             throw new NotImplementedException();
         }
 
         public Car? GetById(int id)
         {
-            return _bookRepository.GetById(id);
+            return _carRepository.GetById(id);
         }
 
        

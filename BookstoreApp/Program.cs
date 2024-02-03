@@ -41,7 +41,7 @@ namespace BookstoreApp
                 .AddValidatorsFromAssemblyContaining(typeof(Program));
 
             builder.Services
-                .AddSingleton<ICarRepository, BookRepository>();
+                .AddSingleton<ICarRepository, CarRepository>();
 
             builder.Services.AddHealthChecks()
                 .AddCheck<CustomHealthCheck>(nameof(CustomHealthCheck));

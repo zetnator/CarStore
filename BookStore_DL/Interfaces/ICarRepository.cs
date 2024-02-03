@@ -6,9 +6,9 @@ namespace CarStore_DL.Interfaces
     {
         List<Car> GetAll();
 
-        List<Car> GetAllCarsByBuyer(int authorId);
+        List<Car> GetAllCarsByBuyer(int buyerId);
 
-        Car? GetById(int id);
+        Car? GetCarById(int id);
 
         void Add(Car buyer);
 

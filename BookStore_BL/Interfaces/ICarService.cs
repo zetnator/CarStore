@@ -6,7 +6,7 @@ namespace CarStore_BL.Interfaces
     {
         List<Car> GetAll();
 
-        Car? GetBooksById(int id);
+        Car? GetById(int id);
 
         void Add(Car book);
 

@@ -4,7 +4,7 @@ using CarStore_DL.MemoryDB;
 
 namespace CarStore_DL.Repositories
 {
-    public class BookRepository : ICarRepository
+    public class CarRepository : ICarRepository
     {
         public void Add(Car car)
         {
@@ -31,6 +31,11 @@ namespace CarStore_DL.Repositories
             return InMemoryDB.CarData.FirstOrDefault(a => a.Id == id);
         }
 
+        public Car? GetCarById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         void ICarRepository.Add(Car buyer)
         {
             throw new NotImplementedException();
@@ -46,9 +51,9 @@ namespace CarStore_DL.Repositories
             throw new NotImplementedException();
         }
 
-        List<Car> ICarRepository.GetAllCarsByAuthor(int authorId)
+        List<Car> ICarRepository.GetAllCarsByBuyer(int authorId)
         {
-            return InMemoryDB.BookData.Where(b => b.AuthorId == authorId).ToList();
+            return InMemoryDB.CarData.Where(b => b.BuyerId == authorId).ToList();
         }
 
         Car? ICarRepository.GetById(int id)
