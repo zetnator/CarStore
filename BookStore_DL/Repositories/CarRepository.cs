@@ -8,13 +8,13 @@ namespace CarStore_DL.Repositories
     {
         public void Add(Car car)
         {
-            InMemoryDB.BuyerData.Add(buyer);
+            InMemoryDB.CarData.Add(car);
         }
 
         public void Delete(int id)
         {
-            var book = GetById(id);
-            if (book != null)
+            var car = GetById(id);
+            if (car != null)
             {
                 InMemoryDB.CarData.Remove(car);
             }
@@ -28,7 +28,7 @@ namespace CarStore_DL.Repositories
 
         public Car? GetById(int id)
         {
-            return InMemoryDB.CarData.FirstOrDefault(a => a.Id == id);
+            return InMemoryDB.CarData.FirstOrDefault(c => c.Id == id);
         }
 
         public Car? GetCarById(int id)
@@ -36,27 +36,12 @@ namespace CarStore_DL.Repositories
             throw new NotImplementedException();
         }
 
-        void ICarRepository.Add(Car buyer)
+        public Car? GetAllCarsByBuyerId(int buyerId)
         {
-            throw new NotImplementedException();
+            return InMemoryDB.CarData.Where(b => b.BuyerId == buyerId).ToList();
         }
 
-        void ICarRepository.Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Car> ICarRepository.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Car> ICarRepository.GetAllCarsByBuyerId(int authorId)
-        {
-            return InMemoryDB.CarData.Where(b => b.BuyerId == authorId).ToList();
-        }
-
-        Car? ICarRepository.GetById(int id)
+        List<Car> ICarRepository.GetAllCarsByBuyerId(int buyerId)
         {
             throw new NotImplementedException();
         }

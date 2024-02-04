@@ -1,19 +1,19 @@
 ﻿using CarStore_BL.Services;
 
-namespace BookStore.Test
+namespace CarStore.Test
 {
     internal class StoreService
     {
-        private CarService bookService;
-        private AuthorService authorService;
+        private CarService carService;
+        private BuyerService buyerService;
 
-        public StoreService(CarService bookService, AuthorService authorService)
+        public StoreService(CarService carService, BuyerService buyerService)
         {
-            this.bookService = bookService;
-            this.authorService = authorService;
+            this.carService = carService;
+            this.buyerService = buyerService;
         }
 
-        internal IEnumerable<object> GetAllBooksCount(int input, int authorId)
+        internal IEnumerable<object> GetAllCarsCount(int input, int buyerId)
         {
             throw new NotImplementedException();
         }

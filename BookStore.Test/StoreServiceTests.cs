@@ -12,43 +12,95 @@ namespace CarStore_Test
             new Car()
             {
                 Id = 1,
+                Brand = "Renault",
+                Model = "Clio IV",
+                ReleaseDate = new DateTime(2014,02, 12),
                 BuyerId = 1,
-                ReleaseDate = new DateTime(2005,02, 12),
-                Brand = "Book 1"
             },
             new Car()
             {
                 Id = 2,
-                BuyerId = 1,
+                Brand = "Volkswager",
+                Model = "Golf Mk5 Variant",
                 ReleaseDate = new DateTime(2007,02, 12),
-                Brand = "Book 2"
+                BuyerId = 2,
+            },
+            new Car()
+            {
+                Id = 3,
+                Brand = "Mercedes",
+                Model = "CLA 45 AMG",
+                ReleaseDate = new DateTime(2022,04, 21),
+                BuyerId = 3,
+            },
+            new Car()
+            {
+                Id = 4,
+                Brand = "BMW",
+                Model = "i8",
+                ReleaseDate = new DateTime(2018,06, 15),
+                BuyerId = 4,
+            },
+            new Car()
+            {
+                Id = 5,
+                Brand = "Audi",
+                Model = "RS7",
+                ReleaseDate = new DateTime(2023,06, 16),
+                BuyerId = 5,
+            },
+            new Car()
+            {
+                Id = 6,
+                Brand = "Nissan",
+                Model = "Micra K12",
+                ReleaseDate = new DateTime(2007,06, 16),
+                BuyerId = 6,
             }
         };
 
-        public static List<Buyer> AuthorData =
-            new List<Buyer>()
+        public static List<Buyer> BuyerData = new List<Buyer>()
+        {
+            new Buyer()
             {
-                new Buyer()
-                {
-                    Id = 1,
-                    Name = "",
-                    BirthDay = DateTime.Now
-                },
-                new Buyer()
-                {
-                    Id = 2,
-                    Name = "",
-                    BirthDay = DateTime.Now
-                },
-                new Buyer()
-                {
-                    Id = 3,
-                    Name = "",
-                    BirthDay = DateTime.Now
-                }
-            };
+                Id = 1,
+                Name = "Buyer 1",
+                BirthDay = DateTime.Now
+            },
+            new Buyer()
+            {
+                Id = 2,
+                Name = "Buyer 2",
+                BirthDay = DateTime.Now
+            },
+            new Buyer()
+            {
+                Id = 3,
+                Name = "Buyer 3",
+                BirthDay = DateTime.Now
+            },
+            new Buyer()
+            {
+                Id = 4,
+                Name = "Buyer 4",
+                BirthDay = DateTime.Now
+            },
+            new Buyer()
+            {
+                Id = 5,
+                Name = "Buyer 5",
+                BirthDay = DateTime.Now
+            },
+            new Buyer()
+            {
+                Id = 6,
+                Name = "Buyer 6",
+                BirthDay = DateTime.Now
+            }
+        };
+
         [Fact]
-        public void GetAllBooksCount_OK()
+        public void GetAllCarsCount_OK()
         {
             //setup
             var input = 10;
@@ -62,8 +114,8 @@ namespace CarStore_Test
 
             mockedCarRepository.Setup(
                 x =>
-                    x.GetAllBooksByAuthor(authorId))
-                .Returns(BookData.Where(b => b.AuthorId == authorId).ToList());
+                    x.GetAllCarsByBuyerId(buyerId))
+                .Returns(CarData.Where(b => b.BuyerId == buyerId).ToList());
 
             //inject
             var carService =
@@ -82,11 +134,11 @@ namespace CarStore_Test
         }
 
         [Fact]
-        public void GetAllBooksCount_WrongAuthorId()
+        public void GetAllCarsCount_WrongBuyerId()
         {
             //setup
             var input = 10;
-            var authorId = 111;
+            var buyerId = 111;
             var expectedCount = 10;
 
             var mockedBookRepository =
@@ -94,26 +146,26 @@ namespace CarStore_Test
             var mockedAuthorRepository =
                 new Mock<IBuyerRepository>();
 
-            mockedBookRepository.Setup(x => x.GetAllCarsByBuyer(buyerId))
+            mockedBookRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
                                 .Returns(CarData.Where(b => b.BuyerId == buyerId).ToList());
 
             //inject
             var bookService =
                 new CarService(mockedBookRepository.Object);
-            var authorService =
-                new AuthorService(mockedAuthorRepository.Object);
+            var buyerService =
+                new BuyerService(mockedAuthorRepository.Object);
             var libraryService =
-                new StoreService(bookService, authorService);
+                new StoreService(carService, buyerService);
 
             //act
-            var result = libraryService.GetAllBooksCount(input, authorId);
+            var result = storeService.GetAllCarsCount(input, buyerId);
 
             //Assert
             Assert.Equal(expectedCount, result);
         }
 
         [Fact]
-        public void GetAllBooksCount_NegativeInput()
+        public void GetAllCarsCount_NegativeInput()
         {
             //setup
             var input = -10;
@@ -138,7 +190,7 @@ namespace CarStore_Test
 
             //act
             var result =
-                storeService.GetAllBooksCount(input, authorId);
+                storeService.GetAllCarsCount(input, buyerId);
 
             //Assert
             Assert.Equal(expectedCount, result);

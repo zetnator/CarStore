@@ -3,7 +3,7 @@ using CarStore_Models.Requests;
 using CarStore_BL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookstoreApp.Controllers
+namespace CarStoreApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,10 +16,10 @@ namespace BookstoreApp.Controllers
         }
 
         
-        [HttpPost("GetAllCarsByBuyerId")]
-        public GetCarsByBuyerIdResponse? GetAllCarsByBuyerId(GetCarsByBuyerRequest requst)
+        [HttpPost("GetCarsByBuyerId")]
+        public GetCarsByBuyerIdResponse? GetAllCarsByBuyerId(GetCarsByBuyerIdRequest request)
         {
-            return _storeService.GetCarsByBuyer(requst);
+            return _storeService.GetCarsByBuyerId(request);
         }
     }
 }

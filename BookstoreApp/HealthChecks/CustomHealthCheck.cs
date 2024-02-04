@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace BookstoreApp.HealthChecks
+namespace CarStoreApp.HealthChecks
 {
     public class CustomHealthCheck : IHealthCheck
     {

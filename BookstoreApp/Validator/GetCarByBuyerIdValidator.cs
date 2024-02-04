@@ -2,7 +2,7 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 
-namespace BookstoreApp.Validator
+namespace CarStoreApp.Validator
 {
     public class GetCarByBuyerIdValidator
     {

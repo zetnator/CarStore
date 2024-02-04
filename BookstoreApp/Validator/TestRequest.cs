@@ -1,4 +1,4 @@
-﻿namespace BookStore.Validators
+﻿namespace CarStore.Validators
 {
     public class TestRequest
     {

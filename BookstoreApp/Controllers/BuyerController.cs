@@ -2,7 +2,7 @@ using CarStore_Models.Models;
 using CarStore_BL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookstoreApp.Controllers
+namespace CarStoreApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]

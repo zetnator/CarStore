@@ -1,12 +1,12 @@
 using CarStore_BL.Services;
 using CarStore_DL.Interfaces;
 using CarStore_DL.Repositories;
-using BookstoreApp.HealthChecks;
+using CarStoreApp.HealthChecks;
 using CarStore_BL.Interfaces;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 
-namespace BookstoreApp
+namespace CarStoreApp
 {
     public class Program
     {
@@ -15,9 +15,9 @@ namespace BookstoreApp
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddSingleton<IBuyerRepository, AuthorRepository>();
+            builder.Services.AddSingleton<IBuyerRepository, BuyerRepository>();
 
-            builder.Services.AddSingleton<IBuyerService, AuthorService>();
+            builder.Services.AddSingleton<IBuyerService, BuyerService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
