@@ -10,33 +10,33 @@ namespace CarStoreApp.Controllers
     {
         private readonly ICarStoreService _carService;
 
-        public CarController(ICarStoreService bookService)
+        public CarController(ICarStoreService carService)
         {
-            _carService = bookService;
+            _carService = carService;
         }
 
-        [HttpGet(template: "GetBookById")]
-        public Car GetBookById(int id)
+        [HttpGet]
+        public Car GetCarById(int id)
         {
-            return _carService.GetBooksById(id);
+            return _carService.GetCarById(id);
         }
 
-        [HttpGet(template: "GetAllBooks")]
-        public List<Car> GetAllBooks()
+        [HttpGet]
+        public List<Car> GetAllCars()
         {
-            return _carService.GetAll();
+            return _carService.GetAllCars();
         }
 
         [HttpPost]
-        public void Add(Car book)
+        public void AddCar(Car car)
         {
-            _carService.Add(book);
+            _carService.AddCar(car);
         }
 
         [HttpDelete]
-        public void Delete(int id)
+        public void DeleteCar(int id)
         {
-            _carService.Delete(id);
+            _carService.DeleteCar(id);
         }
     }
 }

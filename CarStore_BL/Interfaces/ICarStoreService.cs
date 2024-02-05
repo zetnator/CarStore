@@ -7,5 +7,6 @@ namespace CarStore_BL.Interfaces
     {
         GetCarsByBuyerIdResponse?
             GetByBuyer(GetCarsByBuyerIdRequest request);
+        GetCarsByBuyerIdResponse? GetCarsByBuyerId(GetCarsByBuyerIdRequest request);
     }
 }

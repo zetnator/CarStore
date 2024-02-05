@@ -7,16 +7,17 @@ namespace CarStoreApp.HealthChecks
         public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
 
-            try
+            var isHealthy = true;
+
+            if (isHealthy)
             {
                 return Task.FromResult(
-                    HealthCheckResult.Healthy("OK"));
+                    HealthCheckResult.Healthy(" Congrats! All the buyers are happy with their new cars! "));
             }
-            catch (Exception e)
-            {
-                return Task.FromResult(
-                    HealthCheckResult.Unhealthy(e.Message));
-            }
+
+            return Task.FromResult(
+                new HealthCheckResult(
+                    context.Registration.FailureStatus, " Oh no! Some buyers are not feeling happy with their cars!"));
         }
     }
 }

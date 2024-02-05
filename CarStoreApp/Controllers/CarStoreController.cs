@@ -7,19 +7,16 @@ namespace CarStoreApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StoreController : ControllerBase
+    public class CarStoreController : ControllerBase
     {
         private readonly ICarStoreService _storeService;
-        public StoreController(ICarStoreService storeService)
+        public CarStoreController(ICarStoreService storeService)
         {
             _storeService = storeService;
         }
 
-        
+
         [HttpPost("GetCarsByBuyerId")]
-        public GetCarsByBuyerIdResponse? GetAllCarsByBuyerId(GetCarsByBuyerIdRequest request)
-        {
-            return _storeService.GetCarsByBuyerId(request);
-        }
+        public GetCarsByBuyerIdResponse? GetAllCarsByBuyerId(GetCarsByBuyerIdRequest request) => _storeService.GetCarsByBuyerId(request);
     }
 }

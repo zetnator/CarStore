@@ -10,33 +10,32 @@ namespace CarStoreApp.Controllers
     {
         private readonly IBuyerService _buyerService;
     
-
-        public BuyerController(IBuyerService authorService)
+        public BuyerController(IBuyerService buyerService)
         {
-            _buyerService = authorService;
+            _buyerService = buyerService;
         }
 
-        [HttpGet( "GetAll")]
-        public IEnumerable<Buyer> GetAll()
+        [HttpGet( "GetAllBuyers")]
+        public IEnumerable<Buyer> GetAllBuyers()
         {
-            return _buyerService.GetAll();
+            return _buyerService.GetAllBuyers();
         }
-        [HttpGet("GetById")]
-        public Buyer? GetById(int id) 
+        [HttpGet("GetBuyerById")]
+        public Buyer? GetBuyerById(int id) 
         { 
-            return _buyerService.GetById(id);
+            return _buyerService.GetBuyerById(id);
         }
 
-        [HttpGet("Add")]
-        public void Add([FromBody] Buyer author)
+        [HttpGet("AddBuyer")]
+        public void AddBuyer([FromBody] Buyer buyer)
         { 
-            _buyerService.Add(author);
+            _buyerService.Add(buyer);
         }
 
-        [HttpGet("Delete")]
-        public void Delete(int id)
+        [HttpGet("DeleteBuyer")]
+        public void DeleteBuyer(int id)
         {
-            _buyerService.Delete(id);
+            _buyerService.DeleteBuyer(id);
         }
     }
 }

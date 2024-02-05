@@ -1,17 +1,25 @@
-﻿using FluentValidation;
+﻿using CarStore_Models.Requests;
+using Microsoft.AspNetCore.Mvc;
+using FluentValidation;
 
 namespace CarStoreApp.Validators
 {
-    public class TestRequestValidation : AbstractValidator<GetAllCarsByBuyerIdRequest>
+    public class CarController : ControllerBase
     {
-
-        public TestRequestValidation()
+        public class TestRequestValidation : AbstractValidator<GetCarsByBuyerIdRequest>
         {
-            RuleFor(x => x.BuyerId)
-                .NotEmpty().NotNull();
 
-            RuleFor(x => x.AfterDate)
-                .NotEmpty().NotNull();
+            public TestRequestValidation()
+            {
+                RuleFor(x => x.BuyerId)
+                    .NotEmpty()
+                    .NotNull()
+                    .GreaterThan(0).WithMessage("> 0");
+
+                RuleFor(x => x.AfterDate)
+                    .NotEmpty()
+                    .NotNull();
+            }
         }
     }
 }
