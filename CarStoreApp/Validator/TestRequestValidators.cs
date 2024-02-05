@@ -2,7 +2,7 @@
 
 namespace CarStoreApp.Validators
 {
-    public class TestRequestValidation : AbstractValidator<GetAllCarsByBuyerRequest>
+    public class TestRequestValidation : AbstractValidator<GetAllCarsByBuyerIdRequest>
     {
 
         public TestRequestValidation()
