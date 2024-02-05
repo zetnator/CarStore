@@ -46,5 +46,10 @@ namespace CarStore_BL.Services
         {
             throw new NotImplementedException();
         }
+
+        public GetCarsByBuyerIdResponse? GetCarsByBuyerId(GetCarsByBuyerIdRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

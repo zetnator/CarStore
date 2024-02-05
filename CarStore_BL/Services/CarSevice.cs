@@ -40,5 +40,10 @@ namespace CarStore_BL.Services
         {
             return _carRepository.GetCarById(id);
         }
+
+        public GetCarsByBuyerIdResponse? GetCarsByBuyerId(GetCarsByBuyerIdRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

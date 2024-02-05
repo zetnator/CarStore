@@ -1,6 +1,7 @@
 using CarStore.Test;
 using CarStore_BL.Services;
 using CarStore_DL.Interfaces;
+using CarStore_DL.Repositories;
 using CarStore_Models.Models;
 using Moq;
 
@@ -122,7 +123,7 @@ namespace CarStore_Test
             var carService =
                 new CarService(mockedCarRepository.Object);
             var buyerService =
-                new BuyerService(mockedBuyerRepository.Object);
+                new BuyerService(new BuyerRepository.Object);
             var storeService =
                 new CarStoreService(carService, buyerService);
 
@@ -142,19 +143,19 @@ namespace CarStore_Test
             var buyerId = 111;
             var expectedCount = 10;
 
-            var mockedBookRepository =
+            var mockedCarRepository =
                 new Mock<ICarRepository>();
-            var mockedAuthorRepository =
+            var mockedBuyerRepository =
                 new Mock<IBuyerRepository>();
 
-            mockedBookRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
+            mockedCarRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
                                 .Returns(CarData.Where(b => b.BuyerId == buyerId).ToList());
 
             //inject
             var bookService =
-                new CarService(mockedBookRepository.Object);
+                new CarService(mockedCarRepository.Object);
             var buyerService =
-                new BuyerService(mockedAuthorRepository.Object);
+                new BuyerService(mockedBuyerRepository.Object);
             var storeService =
                 new CarStoreService(carService, buyerService);
 
@@ -173,20 +174,20 @@ namespace CarStore_Test
             var buyerId = 111;
             var expectedCount = 0;
 
-            var mockedBookRepository =
+            var mockedCarRepository =
                 new Mock<ICarRepository>();
-            var mockedAuthorRepository =
+            var mockedBuyerRepository =
                 new Mock<IBuyerRepository>();
 
-            mockedBookRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
+            mockedCarRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
                                 .Returns(CarData.Where(b =>b.BuyerId == buyerId).ToList());
 
             //inject
-            var bookService =
+            var carService =
                 new CarService(mockedCarRepository.Object);
-            var authorService =
+            var buyerService =
                 new BuyerService(mockedBuyerRepository.Object);
-            var libraryService =
+            var storeService =
                 new CarStoreService(carService, buyerService);
 
             //act

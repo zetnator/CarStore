@@ -28,12 +28,7 @@ namespace CarStore_DL.Repositories
 
         public Car? GetCarById(int id)
         {
-            return InMemoryDB.CarData.Where(c => c.Id == id).ToList();
-        }
-
-        public Car? GetAllCarsByBuyerId(int buyerId)
-        {
-            return InMemoryDB.CarData.Where(b => b.BuyerId == buyerId).ToList();
+            throw new NotImplementedException();
         }
 
         List<Car> ICarRepository.GetAllCarsByBuyerId(int buyerId)
