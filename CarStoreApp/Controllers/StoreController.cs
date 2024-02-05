@@ -9,8 +9,8 @@ namespace CarStoreApp.Controllers
     [ApiController]
     public class StoreController : ControllerBase
     {
-        private readonly IStoreService _storeService;
-        public StoreController(IStoreService storeService)
+        private readonly ICarStoreService _storeService;
+        public StoreController(ICarStoreService storeService)
         {
             _storeService = storeService;
         }

@@ -1,3 +1,4 @@
+using CarStore.Test;
 using CarStore_BL.Services;
 using CarStore_DL.Interfaces;
 using CarStore_Models.Models;
@@ -5,7 +6,7 @@ using Moq;
 
 namespace CarStore_Test
 {
-    public class StoreServiceTests
+    public class CarStoreServiceTests
     {
         public static List<Car> CarData = new List<Car>()
         {
@@ -123,11 +124,11 @@ namespace CarStore_Test
             var buyerService =
                 new BuyerService(mockedBuyerRepository.Object);
             var storeService =
-                new StoreService(carService, buyerService);
+                new CarStoreService(carService, buyerService);
 
             //act
             var result =
-                storeService.GetAllBooksCount(input, buyerId);
+                storeService.GetAllCarsCount(input, buyerId);
 
             //Assert
             Assert.Equal(expectedCount, result);
@@ -154,8 +155,8 @@ namespace CarStore_Test
                 new CarService(mockedBookRepository.Object);
             var buyerService =
                 new BuyerService(mockedAuthorRepository.Object);
-            var libraryService =
-                new StoreService(carService, buyerService);
+            var storeService =
+                new CarStoreService(carService, buyerService);
 
             //act
             var result = storeService.GetAllCarsCount(input, buyerId);
@@ -178,7 +179,7 @@ namespace CarStore_Test
                 new Mock<IBuyerRepository>();
 
             mockedBookRepository.Setup(x => x.GetAllCarsByBuyerId(buyerId))
-                                .Returns(CarData.Where(b =>b.BuyerId == BuyerId).ToList());
+                                .Returns(CarData.Where(b =>b.BuyerId == buyerId).ToList());
 
             //inject
             var bookService =
@@ -186,7 +187,7 @@ namespace CarStore_Test
             var authorService =
                 new BuyerService(mockedBuyerRepository.Object);
             var libraryService =
-                new StoreService(carService, buyerService);
+                new CarStoreService(carService, buyerService);
 
             //act
             var result =

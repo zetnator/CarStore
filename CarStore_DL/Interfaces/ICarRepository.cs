@@ -4,15 +4,14 @@ namespace CarStore_DL.Interfaces
 {
     public interface ICarRepository
     {
-        List<Car> GetAll();
+        List<Car> GetAllCars();
 
         List<Car> GetAllCarsByBuyerId(int buyerId);
 
         Car? GetCarById(int id);
 
-        void Add(Car buyer);
+        void AddCar(Car buyer);
 
-        void Delete(int id);
-        Car? GetById(int id);
+        void DeleteCar(int id);
     }
 }

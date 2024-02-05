@@ -6,14 +6,14 @@ namespace CarStore_DL.Repositories
 {
     public class CarRepository : ICarRepository
     {
-        public void Add(Car car)
+        public void AddCar(Car car)
         {
             InMemoryDB.CarData.Add(car);
         }
 
-        public void Delete(int id)
+        public void DeleteCar(int id)
         {
-            var car = GetById(id);
+            var car = GetCarById(id);
             if (car != null)
             {
                 InMemoryDB.CarData.Remove(car);
@@ -21,19 +21,14 @@ namespace CarStore_DL.Repositories
 
         }
 
-        public List<Car> GetAll()
+        public List<Car> GetAllCars()
         {
             return InMemoryDB.CarData;
         }
 
-        public Car? GetById(int id)
-        {
-            return InMemoryDB.CarData.FirstOrDefault(c => c.Id == id);
-        }
-
         public Car? GetCarById(int id)
         {
-            throw new NotImplementedException();
+            return InMemoryDB.CarData.Where(c => c.Id == id).ToList();
         }
 
         public Car? GetAllCarsByBuyerId(int buyerId)

@@ -4,12 +4,12 @@ namespace CarStore_BL.Interfaces
 {
     public interface IBuyerService
     {
-        List<Buyer> GetAll();
+        List<Buyer> GetAllBuyers();
 
-        Buyer? GetById(int id);
+        Buyer? GetBuyerById(int id);
 
-        void Add(Buyer author);
+        void AddBuyer(Buyer buyer);
 
-        void Delete(int id);
+        void DeleteBuyer(int id);
     }
 }

@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CarStore_Models.Models;
+﻿using CarStore_Models.Models;
 
 namespace CarStore_DL.Interfaces
 {
     public interface IBuyerRepository
     {
-        List<Buyer> GetAll();
+        List<Buyer> GetAllBuyers();
 
-        Buyer? GetById(int id);
+        Buyer? GetBuyerById(int id);
 
-        void Add(Buyer buyer);
+        void AddBuyer(Buyer buyer);
 
-        void Delete(int id);
+        void DeleteBuyer(int id);
     }
 }

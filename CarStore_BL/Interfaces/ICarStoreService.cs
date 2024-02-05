@@ -3,9 +3,9 @@ using CarStore_Models.Requests;
 
 namespace CarStore_BL.Interfaces
 {
-    public interface IStoreService
+    public interface ICarStoreService
     {
         GetCarsByBuyerIdResponse?
-            GetByAuthor(GetCarsByBuyerIdRequest request);
+            GetByBuyer(GetCarsByBuyerIdRequest request);
     }
 }

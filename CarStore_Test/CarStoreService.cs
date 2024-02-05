@@ -2,12 +2,12 @@
 
 namespace CarStore.Test
 {
-    internal class StoreService
+    internal class CarStoreService
     {
         private CarService carService;
         private BuyerService buyerService;
 
-        public StoreService(CarService carService, BuyerService buyerService)
+        public CarStoreService(CarService carService, BuyerService buyerService)
         {
             this.carService = carService;
             this.buyerService = buyerService;

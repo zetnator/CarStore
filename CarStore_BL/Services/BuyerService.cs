@@ -13,24 +13,24 @@ namespace CarStore_BL.Services
             _buyerRepository = buyerRepository;
         }
 
-        public void Add(Buyer buyer)
+        public void AddBuyer(Buyer buyer)
         {
-            _buyerRepository.Add(buyer);
+            _buyerRepository.AddBuyer(buyer);
         }
 
-        public void Delete(int id)
+        public void DeleteBuyer(int id)
         {
-            _buyerRepository.Delete(id);
+            _buyerRepository.DeleteBuyer(id);
         }
 
-        public List<Buyer> GetAll()
+        public List<Buyer> GetAllBuyers()
         {
-            return _buyerRepository.GetAll();  
+            return _buyerRepository.GetAllBuyers();  
         }
 
-        public Buyer? GetById(int id)
+        public Buyer? GetBuyerById(int id)
         {
-            return _buyerRepository.GetById(id);
+            return _buyerRepository.GetBuyerById(id);
         }
     }
 }

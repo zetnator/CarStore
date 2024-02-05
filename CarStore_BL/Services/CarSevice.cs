@@ -1,11 +1,13 @@
 ﻿using CarStore_Models.Models;
 using CarStore_DL.Interfaces;
 using CarStore_BL.Interfaces;
+using CarStore_Models.Responses;
+using CarStore_Models.Requests;
 
 
 namespace CarStore_BL.Services
 {
-    public class CarService : ICarService
+    public class CarService : ICarStoreService
     {
         private readonly ICarRepository _carRepository;
 
@@ -14,22 +16,29 @@ namespace CarStore_BL.Services
             _carRepository = carRepository;
         }
 
-        public void Add(Car car)
+        public void AddCar(Car car)
         {
-            _carRepository.Add(car);
+            _carRepository.AddCar(car);
         }
 
-        public void Delete(int id)
+        public void DeleteCar(int id)
         {
-            _carRepository.Delete(id);
+            _carRepository.DeleteCar(id);
         }
 
-        public List<Car> GetAll()
+        public List<Car> GetAllCars()
         {
-            return _carRepository.GetAll();
+            return _carRepository.GetAllCars();
         }
-        public Car? GetById(int id) => _carRepository.GetById(id);
 
+        public GetCarsByBuyerIdResponse? GetByBuyer(GetCarsByBuyerIdRequest request)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Car? GetCarById(int id)
+        {
+            return _carRepository.GetCarById(id);
+        }
     }
 }
