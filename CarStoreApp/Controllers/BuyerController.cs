@@ -29,7 +29,7 @@ namespace CarStoreApp.Controllers
         [HttpGet("AddBuyer")]
         public void AddBuyer([FromBody] Buyer buyer)
         { 
-            _buyerService.Add(buyer);
+            _buyerService.AddBuyer(buyer);
         }
 
         [HttpGet("DeleteBuyer")]
